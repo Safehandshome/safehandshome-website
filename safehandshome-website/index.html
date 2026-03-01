@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHands Home & Tech Repair LLC - Home Repair & Tech Services in NJ</title>
+    <meta name="description" content="Family-owned handyman, yard work, and tech repair services for homeowners, renters, and seniors in Somerset, Morris, and Union counties, NJ.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #001a4d;
+            --white: #ffffff;
+            --light-blue: #4da6ff;
+            --dark-blue: #003d99;
+            --accent: #0066cc;
+            --gray: #f5f5f5;
+            --text: #333333;
+            --sky-blue: #2d7fbf;
+            --medium-blue: #0052a3;
+            --slate-blue: #1e3a8a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(180deg, #f5f5f5 0%, #e8f0f7 100%);
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--light-blue);
+        }
+
+        /* Hero Section - Dynamic Textured Background */
+        .hero {
+            background: 
+                linear-gradient(90deg, 
+                    #001a4d 0%, 
+                    #003d99 15%,
+                    #0052a3 30%,
+                    #0066cc 45%,
+                    #0052a3 60%,
+                    #003d99 75%,
+                    #001a4d 100%);
+            background-size: 200% 100%;
+            animation: backgroundShift 8s ease infinite;
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(255,255,255,0.05) 0px,
+                    rgba(255,255,255,0.05) 2px,
+                    transparent 2px,
+                    transparent 4px
+                ),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" stroke-width="0.5" opacity="0.08"/></pattern></defs><rect width="60" height="60" fill="url(%23grid)"/></svg>');
+            opacity: 0.7;
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--light-blue);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--navy);
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--light-blue);
+        }
+
+        .cta-button:hover {
+            background: var(--navy);
+            color: var(--light-blue);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 20px;
+            background: var(--gray);
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--navy);
+            text-align: center;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .family-values {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .family-values li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .family-values li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Services Section - Striped Blue Background */
+        .services {
+            padding: 60px 20px;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(45, 127, 191, 0.08) 0px,
+                    rgba(45, 127, 191, 0.08) 20px,
+                    rgba(0, 82, 163, 0.06) 20px,
+                    rgba(0, 82, 163, 0.06) 40px,
+                    rgba(0, 26, 77, 0.04) 40px,
+                    rgba(0, 26, 77, 0.04) 60px
+                );
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(77, 166, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 102, 204, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248, 251, 255, 0.95) 100%);
+            border: 2px solid var(--light-blue);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.5);
+            animation: wave 3s ease-in-out infinite;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .service-card:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .service-card:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        .service-card:nth-child(6) {
+            animation-delay: 1s;
+        }
+
+        .service-card:nth-child(7) {
+            animation-delay: 1.2s;
+        }
+
+        .service-card:nth-child(8) {
+            animation-delay: 1.4s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,52,163,0.2), inset 0 1px 0 rgba(255,255,255,0.5);
+            border-color: var(--accent);
+            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(240, 248, 255, 1) 100%);
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 60px 20px;
+            background: var(--gray);
+        }
+
+        .gallery h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section - Textured Blue Background */
+        .contact {
+            padding: 60px 20px;
+            background: 
+                linear-gradient(135deg, #e8f0f7 0%, #d4e5f0 50%, #c0d9e8 100%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 35px,
+                    rgba(77, 166, 255, 0.1) 35px,
+                    rgba(77, 166, 255, 0.1) 70px
+                );
+            background-size: 100% 100%, 100% 100%;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(0, 102, 204, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(77, 166, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-item-icon {
+            color: var(--light-blue);
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .contact-item h3 {
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .contact-item p {
+            color: #666;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--gray);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--light-blue);
+            box-shadow: 0 0 5px rgba(77, 166, 255, 0.3);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        /* Logo SVG Styling */
+        .logo-svg {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+                    <!-- House shape -->
+                    <polyline points="20,60 50,25 80,60 80,80 20,80"></polyline>
+                    <!-- Chimney -->
+                    <line x1="65" y1="40" x2="65" y2="20"></line>
+                    <!-- Door -->
+                    <rect x="45" y="65" width="10" height="15"></rect>
+                </svg>
+                <span>SafeHands</span>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>SafeHands Home & Tech Repair LLC</h1>
+            <p class="tagline">Your Trusted Family-Owned Home Services Provider</p>
+            <p>Honest, reliable, and knowledgeable home repair and tech services for homeowners, renters, and seniors across Somerset, Morris, and Union counties in New Jersey.</p>
+            <a href="#contact" class="cta-button">Get a Free Estimate</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About SafeHands</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Family-Owned & Community-Focused</h3>
+                    <p>SafeHands Home & Tech Repair LLC is a family-owned and operated business founded on the principles of honesty, reliability, and exceptional craftsmanship.</p>
+                    <p>Led by Michael Ohlson with his sons Aydan and Desmond, we bring a personal touch to every project. We treat each customer like family and build long-term relationships based on trust and quality workmanship.</p>
+                    <ul class="family-values">
+                        <li><strong>Honest & Transparent</strong> - Fair pricing, no hidden fees</li>
+                        <li><strong>Reliable Service</strong> - Prompt, professional work</li>
+                        <li><strong>Expert Knowledge</strong> - Experienced in all home services</li>
+                        <li><strong>Customer First</strong> - Your satisfaction is our priority</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+                        <rect width="300" height="300" fill="#f0f8ff"/>
+                        <circle cx="150" cy="80" r="40" fill="#001a4d"/>
+                        <rect x="100" y="130" width="100" height="120" fill="#001a4d"/>
+                        <circle cx="130" cy="160" r="15" fill="#4da6ff"/>
+                        <circle cx="170" cy="160" r="15" fill="#4da6ff"/>
+                        <path d="M 125 200 Q 150 220 175 200" stroke="#4da6ff" stroke-width="3" fill="none"/>
+                        <text x="150" y="270" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#001a4d">Trusted Service</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🔧 Handyman Work</h3>
+                    <p>Professional repairs and installations around your home including furniture, appliances, fixtures, and more.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🌱 Yard Work</h3>
+                    <p>Complete lawn care including mowing, trimming, landscaping, gardening, and seasonal maintenance.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💻 Tech & Computer Repair</h3>
+                    <p>Expert troubleshooting and repair of computers, smartphones, tablets, and other electronic devices.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📹 Surveillance Install</h3>
+                    <p>Professional installation and configuration of security cameras and surveillance systems for peace of mind.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📡 WiFi Setup & Repair</h3>
+                    <p>Installation, troubleshooting, and optimization of home WiFi networks and routers for reliable connectivity.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💾 Data Storage & Backup</h3>
+                    <p>Secure backup and storage solutions for your important digital data and files.</p>
+                </div>
+                <div class="service-card">
+                    <h3>❄️ Additional Services</h3>
+                    <p>Snow removal, gutter cleaning, general home maintenance, and more. Ask us about custom projects!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Our Work</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="gallery/01-dryer-vent.jpg" alt="Professional dryer vent cleaning service">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/02-network-setup.jpg" alt="Network equipment installation">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/03-camera-install.jpg" alt="Security camera installation">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/04-lawn-drone.jpg" alt="Professional lawn mowing service">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/05-leaf-cleanup.jpg" alt="Fall yard cleanup and leaf removal">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/06-dryer-tutorial.jpg" alt="Dryer vent cleaning demonstration">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/07-plumbing.jpg" alt="Professional plumbing repair work">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/08-renovation.jpg" alt="Home renovation flooring work">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/09-tools.jpg" alt="Professional handyman tools">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/10-mower.jpg" alt="Lawn mower in action">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/11-excavation.jpg" alt="Excavation and trenching work">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/12-floor-sanding.jpg" alt="Hardwood floor sanding in progress">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/13-floor-result.jpg" alt="Completed floor refinishing">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/14-dining-floor.jpg" alt="Dining area floor renovation">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/15-tile-prep.jpg" alt="Floor preparation for tile">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/16-tile-cutting.jpg" alt="Professional tile cutting">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/17-tile-install.jpg" alt="Tile installation in sunroom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 style="color: var(--navy); margin-bottom: 1rem;">Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:soulturnaround@icloud.com">soulturnaround@icloud.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🕒</div>
+                        <div>
+                            <h3>Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Weekends: As Needed</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <h3>Service Area</h3>
+                            <p>Somerset County<br>Morris County<br>Union County<br>New Jersey</p>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--light-blue); color: var(--navy); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                        <p style="margin: 0;"><strong>✓ Free Estimates Available</strong></p>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem;">Contact us today for a no-obligation quote on your project.</p>
+                    </div>
+                </div>
+
+                <form class="contact-form" name="contact" method="POST" data-netlify="true">
+                    <h3 style="color: var(--navy); margin-bottom: 1.5rem;">Send us a Message</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit;">
+                            <option value="">Select a service...</option>
+                            <option value="Handyman Work">Handyman Work</option>
+                            <option value="Yard Work">Yard Work</option>
+                            <option value="Tech Repair">Tech & Computer Repair</option>
+                            <option value="Surveillance">Surveillance Install</option>
+                            <option value="WiFi">WiFi Setup & Repair</option>
+                            <option value="Data Storage">Data Storage & Backup</option>
+                            <option value="Other">Other Service</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SafeHands Home & Tech Repair LLC. All rights reserved.</p>
+            <p>NJ Entity ID: 0451210078</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">Serving Somerset, Morris, and Union Counties in New Jersey</p>
+        </div>
+    </footer>
+</body>
+</html>

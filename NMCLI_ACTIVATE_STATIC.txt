@@ -1,0 +1,48 @@
+NMCLI COMMANDS - ACTIVATE STATIC ETHERNET PROFILE
+==================================================
+
+COMMAND 1: Bring down the current DHCP Ethernet connection
+===========================================================
+nmcli connection down "Wired connection 1"
+
+Note: This will disable the current DHCP connection on eth0.
+      You may lose connectivity briefly if using eth0.
+
+---
+
+COMMAND 2: Bring up the static eth0-static-iot profile
+=======================================================
+nmcli connection up eth0-static-iot
+
+Note: This will activate the static profile and assign IP 10.0.3.50/24 to eth0.
+
+---
+
+COMMAND 3: Verify IP address on eth0
+=====================================
+ip -4 addr show eth0
+
+Note: Shows the IPv4 configuration after profile activation.
+
+---
+
+WHAT THIS DOES:
+===============
+✅ Deactivates the current DHCP connection ("Wired connection 1")
+✅ Activates the new static profile (eth0-static-iot)
+✅ Assigns static IP 10.0.3.50/24 to eth0
+✅ Sets gateway to 10.0.3.1
+✅ Configures DNS: 10.0.3.1, 8.8.8.8
+✅ Applies route metric 100
+✅ Displays final IP configuration
+
+RESULT:
+eth0 will transition from DHCP to static IP 10.0.3.50/24
+
+---
+
+WAITING FOR YOUR APPROVAL:
+
+Reply with:  YES  or  SKIP  or  MODIFY <your-command>
+
+When you say YES, I will execute all 3 commands in order and show you the results.

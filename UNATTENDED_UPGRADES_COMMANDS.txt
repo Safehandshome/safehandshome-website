@@ -1,0 +1,29 @@
+EXACT COMMANDS TO INSTALL & ENABLE UNATTENDED-UPGRADES
+======================================================
+
+COMMAND 1 - Install the packages:
+sudo apt-get update && sudo apt-get install -y unattended-upgrades apt-listchanges
+
+COMMAND 2 - Enable and start the service:
+sudo systemctl enable unattended-upgrades.service
+sudo systemctl start unattended-upgrades.service
+
+COMMAND 3 - Verify it's running:
+sudo systemctl status unattended-upgrades.service
+
+COMMAND 4 - Show the default security config:
+sudo cat /etc/apt/apt.conf.d/50unattended-upgrades
+
+
+WHAT THESE COMMANDS DO:
+- Install unattended-upgrades package (automatic security updates)
+- Install apt-listchanges (shows what's being upgraded)
+- Enable the systemd service to run automatically
+- Default configuration = security updates ONLY (safe defaults)
+- Will NOT auto-install chromium, docker, or other non-security updates
+
+WAITING FOR YOUR APPROVAL:
+Reply with:
+  YES              → I will execute all commands above
+  SKIP             → Do nothing
+  MODIFY <cmd>     → I will use your modified command instead

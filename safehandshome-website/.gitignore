@@ -1,0 +1,6 @@
+# Keep private business data local only
+/private/
+*.env
+.DS_Store
+node_modules/
+.netlify/

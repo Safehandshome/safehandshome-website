@@ -1,0 +1,87 @@
+UFW FIREWALL COMMANDS FOR IOT LAN (10.0.3.0/24)
+================================================
+
+NOTE: UFW is NOT currently installed. These commands will:
+1. Install UFW
+2. Set default policies
+3. Add rules for new IoT LAN (10.0.3.0/24)
+4. Keep Tailscale rules
+5. Enable firewall
+
+---
+
+COMMAND 1: Install UFW
+======================
+sudo apt-get install -y ufw
+
+---
+
+COMMAND 2: Set default policies (deny in, allow out)
+====================================================
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+---
+
+COMMAND 3: Allow SSH from IoT LAN (10.0.3.0/24)
+===============================================
+sudo ufw allow from 10.0.3.0/24 to any port 22 comment 'SSH from IoT LAN'
+
+---
+
+COMMAND 4: Allow OpenClaw web (8080) from IoT LAN
+=================================================
+sudo ufw allow from 10.0.3.0/24 to any port 8080 comment 'OpenClaw web from IoT LAN'
+
+---
+
+COMMAND 5: Allow Ollama (11434) from IoT LAN
+============================================
+sudo ufw allow from 10.0.3.0/24 to any port 11434 comment 'Ollama from IoT LAN'
+
+---
+
+COMMAND 6: Allow SSH from Tailscale VPN (100.0.0.0/8)
+=====================================================
+sudo ufw allow from 100.0.0.0/8 to any port 22 comment 'SSH from Tailscale VPN'
+
+---
+
+COMMAND 7: Allow Tailscale VPN traffic (UDP 41641)
+==================================================
+sudo ufw allow 41641/udp comment 'Tailscale VPN'
+
+---
+
+COMMAND 8: Enable the firewall
+==============================
+sudo ufw enable
+
+---
+
+COMMAND 9: Verify all rules (show final state)
+==============================================
+sudo ufw status verbose
+
+---
+
+WHAT THIS DOES:
+===============
+✅ Installs UFW package
+✅ Sets deny-all-inbound, allow-all-outbound (safe defaults)
+✅ Allows SSH from IoT LAN (10.0.3.0/24)
+✅ Allows OpenClaw web (8080) from IoT LAN
+✅ Allows Ollama (11434) from IoT LAN
+✅ Allows SSH from Tailscale VPN (100.0.0.0/8)
+✅ Allows Tailscale VPN UDP (41641)
+✅ Enables firewall to protect the system
+
+NOTE: Old 192.168.1.0/24 rules are NOT created (clean start)
+
+---
+
+WAITING FOR YOUR APPROVAL:
+
+Reply with:  YES  or  SKIP  or  MODIFY <your-command>
+
+When you say YES, I will execute all 9 commands in order and show you the final UFW status.

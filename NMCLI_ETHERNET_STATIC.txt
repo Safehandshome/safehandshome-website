@@ -1,0 +1,47 @@
+NMCLI COMMAND - CREATE STATIC ETHERNET PROFILE FOR ETH0
+========================================================
+
+COMMAND: Create eth0-static-iot connection profile (do NOT activate yet)
+=========================================================================
+
+nmcli connection add \
+  type ethernet \
+  ifname eth0 \
+  con-name "eth0-static-iot" \
+  ipv4.method manual \
+  ipv4.addresses 10.0.3.50/24 \
+  ipv4.gateway 10.0.3.1 \
+  ipv4.dns "10.0.3.1 8.8.8.8" \
+  ipv4.dns-search "" \
+  ipv4.routes "10.0.3.0/24 10.0.3.1 100" \
+  ipv4.routing-rules "" \
+  connection.autoconnect no
+
+---
+
+WHAT THIS DOES:
+===============
+✅ Creates a new NetworkManager connection profile named "eth0-static-iot"
+✅ Binds it to eth0 (Ethernet interface)
+✅ Sets IPv4 to manual (static)
+✅ Assigns IP: 10.0.3.50/24
+✅ Sets gateway: 10.0.3.1
+✅ Configures DNS: 10.0.3.1 (primary), 8.8.8.8 (fallback)
+✅ Sets route metric to 100 (lower priority than Wi-Fi)
+✅ Sets autoconnect to "no" (will not activate automatically)
+
+RESULT:
+The profile will be created but NOT activated.
+You can then review it with:
+  nmcli connection show eth0-static-iot
+
+To activate later:
+  nmcli connection up eth0-static-iot
+
+---
+
+WAITING FOR YOUR APPROVAL:
+
+Reply with:  YES  or  SKIP  or  MODIFY <your-command>
+
+When you say YES, I will execute the command and show the result.

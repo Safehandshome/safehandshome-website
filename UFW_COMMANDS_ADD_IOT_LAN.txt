@@ -1,0 +1,53 @@
+UFW FIREWALL COMMANDS - ADD IOT LAN RULES (10.0.3.0/24)
+========================================================
+
+IMPORTANT: These commands ADD new rules for IoT LAN WITHOUT deleting existing 192.168.1.0/24 rules.
+If UFW is not currently enabled, these rules will be added but won't take effect until you enable it.
+
+---
+
+COMMAND 1: Allow SSH (port 22) from IoT LAN (10.0.3.0/24)
+=========================================================
+sudo ufw allow from 10.0.3.0/24 to any port 22 comment 'SSH from IoT LAN'
+
+---
+
+COMMAND 2: Allow OpenClaw UI (port 8080) from IoT LAN (10.0.3.0/24)
+==================================================================
+sudo ufw allow from 10.0.3.0/24 to any port 8080 comment 'OpenClaw web from IoT LAN'
+
+---
+
+COMMAND 3: Allow Ollama API (port 11434) from IoT LAN (10.0.3.0/24)
+==================================================================
+sudo ufw allow from 10.0.3.0/24 to any port 11434 comment 'Ollama from IoT LAN'
+
+---
+
+COMMAND 4: Verify all rules (show final state)
+==============================================
+sudo ufw status verbose
+
+---
+
+WHAT THIS DOES:
+===============
+✅ Adds SSH access from IoT LAN (10.0.3.0/24)
+✅ Adds OpenClaw web access from IoT LAN (10.0.3.0/24)
+✅ Adds Ollama API access from IoT LAN (10.0.3.0/24)
+✅ KEEPS all existing 192.168.1.0/24 rules (no deletions)
+✅ KEEPS all Tailscale rules unchanged
+✅ Shows final firewall status
+
+RESULT:
+- IoT LAN devices can access SSH, OpenClaw, and Ollama on this Pi
+- Home LAN devices can still access the same services (if rules exist)
+- Tailscale VPN access unchanged
+
+---
+
+WAITING FOR YOUR APPROVAL:
+
+Reply with:  YES  or  SKIP  or  MODIFY <your-command>
+
+When you say YES, I will execute all 4 commands in order and show you the final UFW status.
