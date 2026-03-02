@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeHands Home & Tech Repair LLC - Home Repair & Tech Services in NJ</title>
-    <meta name="description" content="Family-owned handyman, yard work, and tech repair services for homeowners, renters, and seniors in Somerset, Morris, and Union counties, NJ.">
+    <title>SafeHands Home & Tech Repair - Somerset Morris Union County NJ Handyman Services</title>
+    <meta name="description" content="Family-owned home and tech repair in Somerset, Morris, Union NJ. Free estimates for seniors and families. Professional handyman, smart home, dryer vent cleaning, yard work, and tech services.">
+    <meta name="keywords" content="handyman Somerset County NJ, Morris County handyman, Union County home repair, dryer vent cleaning Somerset, smart home installation Morris County, tech repair Union County, yard work Somerset Morris Union">
+    <meta name="author" content="SafeHands Home & Tech Repair LLC">
+    <meta property="og:title" content="SafeHands Home & Tech Repair - Somerset Morris Union County NJ">
+    <meta property="og:description" content="Professional handyman and tech repair services in Somerset, Morris, and Union counties, New Jersey.">
+    <meta property="og:type" content="business.business">
     <style>
         * {
             margin: 0;
@@ -46,10 +51,17 @@
         nav {
             background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 100%);
             padding: 1rem 0;
-            position: sticky;
-            top: 0;
+            position: relative;
             z-index: 100;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Sticky header only on desktop (min-width: 769px) */
+        @media (min-width: 769px) {
+            nav {
+                position: sticky;
+                top: 0;
+            }
         }
 
         nav .container {
@@ -163,6 +175,13 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .location-keywords {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+            margin-top: 1.5rem;
+            opacity: 0.95;
         }
 
         .cta-button {
@@ -396,6 +415,25 @@
             transform: scale(1.05);
         }
 
+        .gallery-caption {
+            padding: 12px;
+            background: var(--white);
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+            font-weight: 500;
+        }
+
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-item img {
+            flex: 1;
+        }
+
         /* Contact Section - Textured Blue Background */
         .contact {
             padding: 60px 20px;
@@ -581,6 +619,528 @@
             stroke-linecap: round;
             stroke-linejoin: round;
         }
+
+        /* Niches & Solutions Section */
+        .niches {
+            padding: 60px 20px;
+            background: var(--gray);
+        }
+
+        .niches h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            text-align: center;
+        }
+
+        .niches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .niche-card {
+            background: var(--white);
+            border-left: 5px solid var(--light-blue);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .niche-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,52,163,0.15);
+            border-left-color: var(--accent);
+        }
+
+        .niche-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .niche-card h3 {
+            color: var(--navy);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .niche-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .niche-highlight {
+            background: rgba(77, 166, 255, 0.1);
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: var(--navy);
+            font-size: 0.9rem;
+            border-left: 3px solid var(--light-blue);
+        }
+
+        .niche-features {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .niche-features li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #666;
+        }
+
+        .niche-features li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+            font-weight: bold;
+        }
+
+        /* Before/After Section */
+        .before-after {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(0,26,77,0.03) 0%, rgba(77,166,255,0.05) 100%);
+            position: relative;
+        }
+
+        .before-after h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            text-align: center;
+        }
+
+        .before-after-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .before-after-item {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .before-after-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,52,163,0.2);
+        }
+
+        .ba-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            height: 250px;
+            background: #f0f0f0;
+        }
+
+        .ba-image {
+            position: relative;
+            overflow: hidden;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .ba-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ba-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .ba-label.before {
+            background: var(--dark-blue);
+        }
+
+        .ba-label.after {
+            background: var(--accent);
+        }
+
+        .ba-content {
+            padding: 25px;
+        }
+
+        .ba-content h3 {
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .ba-service {
+            color: var(--light-blue);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .ba-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .ba-result {
+            background: rgba(0, 102, 204, 0.1);
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 3px solid var(--accent);
+            font-size: 0.9rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .ba-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 60px 20px;
+            background: var(--white);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 50%, rgba(77, 166, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 50%, rgba(0, 102, 204, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .testimonials h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,251,255,0.95) 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--light-blue);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--light-blue);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,52,163,0.15);
+            border-left-color: var(--accent);
+        }
+
+        .testimonial-text {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-style: italic;
+            padding-left: 15px;
+        }
+
+        .testimonial-author {
+            color: var(--navy);
+            font-weight: bold;
+            font-style: normal;
+            font-size: 0.95rem;
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .testimonial-author::before {
+            content: '★';
+            color: var(--light-blue);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-rating {
+            color: var(--light-blue);
+            font-size: 0.9rem;
+            padding-left: 15px;
+            margin-top: 10px;
+        }
+
+        /* Service Packages/Bundles */
+        .service-packages {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(77, 166, 255, 0.2);
+        }
+
+        .service-packages h3 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .package-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .package-list li {
+            padding: 10px 0;
+            color: #666;
+            border-bottom: 1px solid rgba(77, 166, 255, 0.1);
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .package-list li:last-child {
+            border-bottom: none;
+        }
+
+        .package-list li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+            font-weight: bold;
+        }
+
+        /* Specials Section */
+        .specials {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(77, 166, 255, 0.08) 0%, rgba(0, 102, 204, 0.08) 100%);
+            position: relative;
+        }
+
+        .specials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 35px,
+                    rgba(0, 102, 204, 0.05) 35px,
+                    rgba(0, 102, 204, 0.05) 70px
+                );
+            pointer-events: none;
+        }
+
+        .specials h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .special-offer {
+            background: var(--white);
+            border: 2px solid var(--light-blue);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-offer::before {
+            content: '🎉';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 4rem;
+            opacity: 0.1;
+        }
+
+        .special-offer:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,52,163,0.2);
+            border-color: var(--accent);
+        }
+
+        .special-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .special-offer h3 {
+            color: var(--navy);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .special-offer .niche-highlight {
+            background: rgba(77, 166, 255, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .special-offer ul {
+            list-style: none;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .special-offer ul li {
+            padding: 8px 0;
+            color: #666;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .special-offer ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .special-price {
+            font-size: 1.8rem;
+            color: var(--accent);
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .special-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .special-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        /* CTA Button Styling */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,52,163,0.3);
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--navy) 100%);
+            color: var(--light-blue);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Section CTA wrapper */
+        .section-cta {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(77, 166, 255, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -603,6 +1163,10 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#niches">Solutions</a></li>
+                <li><a href="#work">Our Work</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#specials">Specials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -614,6 +1178,7 @@
             <h1>SafeHands Home & Tech Repair LLC</h1>
             <p class="tagline">Your Trusted Family-Owned Home Services Provider</p>
             <p>Honest, reliable, and knowledgeable home repair and tech services for homeowners, renters, and seniors across Somerset, Morris, and Union counties in New Jersey.</p>
+            <p class="location-keywords">📍 Serving Somerset County • Morris County • Union County • New Jersey</p>
             <a href="#contact" class="cta-button">Get a Free Estimate</a>
         </div>
     </section>
@@ -625,8 +1190,8 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Family-Owned & Community-Focused</h3>
-                    <p>SafeHands Home & Tech Repair LLC is a family-owned and operated business founded on the principles of honesty, reliability, and exceptional craftsmanship.</p>
-                    <p>Led by Michael Ohlson with his sons Aydan and Desmond, we bring a personal touch to every project. We treat each customer like family and build long-term relationships based on trust and quality workmanship.</p>
+                    <p>SafeHands Home & Tech Repair LLC is a family-owned and operated business serving Somerset County, Morris County, and Union County, NJ. Founded on the principles of honesty, reliability, and exceptional craftsmanship.</p>
+                    <p>Led by Michael Ohlson with his sons Aydan and Desmond, we bring a personal touch to every project. We're proud to be part of our New Jersey communities, treating each customer like family and building long-term relationships based on trust and quality workmanship.</p>
                     <ul class="family-values">
                         <li><strong>Honest & Transparent</strong> - Fair pricing, no hidden fees</li>
                         <li><strong>Reliable Service</strong> - Prompt, professional work</li>
@@ -683,6 +1248,70 @@
                     <p>Snow removal, gutter cleaning, general home maintenance, and more. Ask us about custom projects!</p>
                 </div>
             </div>
+
+            <!-- Niche-Specific Service Packages -->
+            <div class="service-packages">
+                <h3>📦 Niche-Specific Packages & Bundles</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <!-- Seniors Package -->
+                    <div style="background: rgba(77, 166, 255, 0.08); padding: 20px; border-radius: 8px; border-left: 4px solid #4da6ff;">
+                        <h4 style="color: var(--navy); margin-bottom: 10px;">👴 Seniors Smart Home Package</h4>
+                        <ul class="package-list">
+                            <li>Easy-to-use smart home device installation</li>
+                            <li>Home safety check (doors, locks, lighting)</li>
+                            <li>WiFi setup with large-button controls</li>
+                            <li>Camera system for peace of mind</li>
+                            <li>Follow-up tech support included</li>
+                        </ul>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 10px; font-weight: bold; color: var(--light-blue);">Available in Morris & Somerset Counties</p>
+                    </div>
+
+                    <!-- Weekend Warriors Package -->
+                    <div style="background: rgba(0, 102, 204, 0.08); padding: 20px; border-radius: 8px; border-left: 4px solid #0066cc;">
+                        <h4 style="color: var(--navy); margin-bottom: 10px;">⚡ Weekend Warriors Bundle</h4>
+                        <ul class="package-list">
+                            <li>Yard cleanup & lawn maintenance</li>
+                            <li>Minor home repairs (up to 5 items)</li>
+                            <li>Quick tech fixes (WiFi, devices)</li>
+                            <li>Home office setup optimization</li>
+                            <li>Saturday morning availability</li>
+                        </ul>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 10px; font-weight: bold; color: var(--light-blue);">Perfect for busy professionals & families</p>
+                    </div>
+
+                    <!-- Eco Bundle -->
+                    <div style="background: rgba(30, 58, 138, 0.08); padding: 20px; border-radius: 8px; border-left: 4px solid #1e3a8a;">
+                        <h4 style="color: var(--navy); margin-bottom: 10px;">🌱 Eco-Friendly Home Bundle</h4>
+                        <ul class="package-list">
+                            <li>Energy-efficient dryer vent cleaning</li>
+                            <li>Green yard care & sustainable landscaping</li>
+                            <li>Water conservation solutions</li>
+                            <li>LED lighting installation</li>
+                            <li>Sustainability consultation included</li>
+                        </ul>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 10px; font-weight: bold; color: var(--light-blue);">Union County eco-conscious homeowners</p>
+                    </div>
+
+                    <!-- Smart Home Starter -->
+                    <div style="background: rgba(45, 127, 191, 0.08); padding: 20px; border-radius: 8px; border-left: 4px solid #2d7fbf;">
+                        <h4 style="color: var(--navy); margin-bottom: 10px;">🏠 Smart Home Starter Kit</h4>
+                        <ul class="package-list">
+                            <li>Smart lock installation & setup</li>
+                            <li>WiFi network optimization</li>
+                            <li>Smart thermostat installation</li>
+                            <li>Basic home automation setup</li>
+                            <li>Training on all systems included</li>
+                        </ul>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 10px; font-weight: bold; color: var(--light-blue);">Ideal for new movers & tech enthusiasts</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services CTA -->
+            <div class="section-cta">
+                <p style="color: var(--navy); font-size: 1.1rem; font-weight: 500; margin-bottom: 10px;">Ready to get started? Let's find the perfect service for you!</p>
+                <a href="#contact" class="cta-button">Get Your Free Estimate Now</a>
+            </div>
         </div>
     </section>
 
@@ -693,54 +1322,409 @@
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="gallery/01-dryer-vent.jpg" alt="Professional dryer vent cleaning service">
+                    <div class="gallery-caption">🌪️ Dryer Vent Cleaning - Improves efficiency & safety</div>
                 </div>
                 <div class="gallery-item">
                     <img src="gallery/02-network-setup.jpg" alt="Network equipment installation">
+                    <div class="gallery-caption">📡 Network & WiFi Setup - Professional installation</div>
                 </div>
                 <div class="gallery-item">
                     <img src="gallery/03-camera-install.jpg" alt="Security camera installation">
+                    <div class="gallery-caption">📹 Surveillance Installation - Security & peace of mind</div>
                 </div>
                 <div class="gallery-item">
                     <img src="gallery/04-lawn-drone.jpg" alt="Professional lawn mowing service">
+                    <div class="gallery-caption">🔪 Lawn Care & Maintenance - Beautiful outdoor spaces</div>
                 </div>
                 <div class="gallery-item">
                     <img src="gallery/05-leaf-cleanup.jpg" alt="Fall yard cleanup and leaf removal">
+                    <div class="gallery-caption">🍂 Yard Cleanup - Transforming overgrown spaces</div>
                 </div>
                 <div class="gallery-item">
                     <img src="gallery/06-dryer-tutorial.jpg" alt="Dryer vent cleaning demonstration">
+                    <div class="gallery-caption">💨 Dryer Service - Expert maintenance & repair</div>
                 </div>
                 <div class="gallery-item">
                     <img src="gallery/07-plumbing.jpg" alt="Professional plumbing repair work">
+                    <div class="gallery-caption">🔧 Plumbing Repairs - Reliable solutions</div>
                 </div>
                 <div class="gallery-item">
                     <img src="gallery/08-renovation.jpg" alt="Home renovation flooring work">
+                    <div class="gallery-caption">🏗️ Home Renovation - Complete project expertise</div>
                 </div>
                 <div class="gallery-item">
                     <img src="gallery/09-tools.jpg" alt="Professional handyman tools">
+                    <div class="gallery-caption">🛠️ Handyman Services - Professional grade work</div>
                 </div>
                 <div class="gallery-item">
                     <img src="gallery/10-mower.jpg" alt="Lawn mower in action">
+                    <div class="gallery-caption">🚜 Lawn Equipment - Powerful maintenance tools</div>
                 </div>
                 <div class="gallery-item">
                     <img src="gallery/11-excavation.jpg" alt="Excavation and trenching work">
+                    <div class="gallery-caption">⛏️ Excavation & Trenching - Heavy-duty work</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery/12-floor-sanding.jpg" alt="Hardwood floor sanding in progress">
+                    <img src="gallery/12-floor-result.jpg" alt="Completed floor refinishing">
+                    <div class="gallery-caption">✨ Floor Refinishing - Beautiful results</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery/13-floor-result.jpg" alt="Completed floor refinishing">
+                    <img src="gallery/13-dining-floor.jpg" alt="Dining area floor renovation">
+                    <div class="gallery-caption">🏠 Floor Renovation - Professional installation</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery/14-dining-floor.jpg" alt="Dining area floor renovation">
+                    <img src="gallery/14-tile-prep.jpg" alt="Floor preparation for tile">
+                    <div class="gallery-caption">📐 Tile Preparation - Quality foundation work</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery/15-tile-prep.jpg" alt="Floor preparation for tile">
+                    <img src="gallery/15-tile-cutting.jpg" alt="Professional tile cutting">
+                    <div class="gallery-caption">✂️ Precision Tile Work - Expert craftsmanship</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery/16-tile-cutting.jpg" alt="Professional tile cutting">
+                    <img src="gallery/16-tile-install.jpg" alt="Tile installation in sunroom">
+                    <div class="gallery-caption">🎨 Tile Installation - Beautiful finishes</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="gallery/17-tile-install.jpg" alt="Tile installation in sunroom">
+            </div>
+
+            <!-- Gallery CTA -->
+            <div class="section-cta">
+                <p style="color: var(--navy); font-size: 1.1rem; font-weight: 500; margin-bottom: 10px;">See how we've transformed homes. Ready for your own project?</p>
+                <a href="#contact" class="cta-button">Get Your Free Estimate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Niches & Solutions Section -->
+    <section class="niches" id="niches">
+        <div class="container">
+            <h2>Solutions for Your Lifestyle</h2>
+            <div class="niches-grid">
+                <!-- Seniors & Empty-Nesters -->
+                <div class="niche-card">
+                    <div class="niche-icon">👴</div>
+                    <h3>For Seniors & Empty-Nesters</h3>
+                    <p>Simple, hassle-free tech and home maintenance solutions tailored for aging homeowners.</p>
+                    <div class="niche-highlight">
+                        "Easy tech for those who want to stay connected without the complexity"
+                    </div>
+                    <ul class="niche-features">
+                        <li>Smart Home Setup (easy-to-use devices)</li>
+                        <li>Home Accessibility Modifications</li>
+                        <li>WiFi & Tech Support</li>
+                        <li>Reliable, Trustworthy Service</li>
+                    </ul>
+                </div>
+
+                <!-- Busy Professionals & Families -->
+                <div class="niche-card">
+                    <div class="niche-icon">💼</div>
+                    <h3>For Busy Professionals</h3>
+                    <p>Fast, efficient solutions for remote workers and families who value their time.</p>
+                    <div class="niche-highlight">
+                        "Weekend Warriors Package: Quick jobs done right while you relax"
+                    </div>
+                    <ul class="niche-features">
+                        <li>Home Office Setup & Tech</li>
+                        <li>Quick Weekend Projects</li>
+                        <li>Yard Maintenance (minimal effort)</li>
+                        <li>Emergency Repairs</li>
+                    </ul>
+                </div>
+
+                <!-- Eco-Friendly Homeowners -->
+                <div class="niche-card">
+                    <div class="niche-icon">🌱</div>
+                    <h3>For Eco-Conscious Homeowners</h3>
+                    <p>Sustainable repairs and green improvements aligned with NJ's environmental values.</p>
+                    <div class="niche-highlight">
+                        "Green solutions that reduce waste and lower your energy costs"
+                    </div>
+                    <ul class="niche-features">
+                        <li>Energy-Efficient Upgrades</li>
+                        <li>Green Yard Care Tips</li>
+                        <li>Sustainable Materials</li>
+                        <li>Water Conservation Solutions</li>
+                    </ul>
+                </div>
+
+                <!-- Tech-Forward Homeowners -->
+                <div class="niche-card">
+                    <div class="niche-icon">🏠</div>
+                    <h3>For Smart Home Enthusiasts</h3>
+                    <p>Comprehensive smart home integration combining tech and handyman expertise.</p>
+                    <div class="niche-highlight">
+                        "Smart Home Starter Package: Perfect for new movers and tech adopters"
+                    </div>
+                    <ul class="niche-features">
+                        <li>Smart Lock Installation</li>
+                        <li>Intelligent Lighting Systems</li>
+                        <li>Home Automation Setup</li>
+                        <li>Tech Integration Support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Niches CTA -->
+            <div class="section-cta">
+                <p style="color: var(--navy); font-size: 1.1rem; font-weight: 500; margin-bottom: 10px;">Found your solution? Let's talk about your project!</p>
+                <a href="#contact" class="cta-button">Get Your Free Estimate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Showcase Section -->
+    <section class="before-after" id="work">
+        <div class="container">
+            <h2>See Our Impact: Before & After</h2>
+            <div class="before-after-grid">
+                <!-- Example 1: Backyard Transformation -->
+                <div class="before-after-item">
+                    <div class="ba-images">
+                        <div class="ba-image">
+                            <div class="ba-label before">BEFORE</div>
+                            <img src="gallery/05-leaf-cleanup.jpg" alt="Overgrown backyard before cleanup">
+                        </div>
+                        <div class="ba-image">
+                            <div class="ba-label after">AFTER</div>
+                            <img src="gallery/04-lawn-drone.jpg" alt="Beautiful manicured lawn">
+                        </div>
+                    </div>
+                    <div class="ba-content">
+                        <div class="ba-icon">🌳</div>
+                        <h3>Backyard Oasis</h3>
+                        <div class="ba-service">YARD WORK - MORRIS COUNTY</div>
+                        <p class="ba-description">Transformed this Morris County backyard from overgrown and neglected to a beautiful outdoor space perfect for entertaining. Professional yard work and landscaping services.</p>
+                        <div class="ba-result">💰 Client saved $200+ on professional landscaping costs</div>
+                    </div>
+                </div>
+
+                <!-- Example 2: Smart Home Setup -->
+                <div class="before-after-item">
+                    <div class="ba-images">
+                        <div class="ba-image">
+                            <div class="ba-label before">BEFORE</div>
+                            <img src="gallery/02-network-setup.jpg" alt="Complex network cables">
+                        </div>
+                        <div class="ba-image">
+                            <div class="ba-label after">AFTER</div>
+                            <img src="gallery/03-camera-install.jpg" alt="Professional smart home setup">
+                        </div>
+                    </div>
+                    <div class="ba-content">
+                        <div class="ba-icon">📡</div>
+                        <h3>Smart Home Complete</h3>
+                        <div class="ba-service">TECH INTEGRATION - SOMERSET COUNTY</div>
+                        <p class="ba-description">Senior resident in Somerset County went from confused about WiFi to enjoying full smart home control with easy-to-use devices. Expert smart home installation and setup.</p>
+                        <div class="ba-result">✓ Now controls lights, locks & cameras from phone</div>
+                    </div>
+                </div>
+
+                <!-- Example 3: Dryer Vent Installation -->
+                <div class="before-after-item">
+                    <div class="ba-images">
+                        <div class="ba-image">
+                            <div class="ba-label before">BEFORE</div>
+                            <img src="gallery/01-dryer-vent.jpg" alt="Tangled dryer vent issues">
+                        </div>
+                        <div class="ba-image">
+                            <div class="ba-label after">AFTER</div>
+                            <img src="gallery/06-dryer-tutorial.jpg" alt="Professional dryer vent setup">
+                        </div>
+                    </div>
+                    <div class="ba-content">
+                        <div class="ba-icon">💨</div>
+                        <h3>Dryer Efficiency Fix</h3>
+                        <div class="ba-service">HOME MAINTENANCE - UNION COUNTY</div>
+                        <p class="ba-description">Union County family's dryer was taking 3+ cycles to dry clothes due to clogged vents. Professional dryer vent cleaning and repair restored performance and energy efficiency.</p>
+                        <div class="ba-result">⚡ Drying time cut in half + energy bills reduced</div>
+                    </div>
+                </div>
+
+                <!-- Example 4: Home Renovation -->
+                <div class="before-after-item">
+                    <div class="ba-images">
+                        <div class="ba-image">
+                            <div class="ba-label before">BEFORE</div>
+                            <img src="gallery/08-renovation.jpg" alt="Renovation project before">
+                        </div>
+                        <div class="ba-image">
+                            <div class="ba-label after">AFTER</div>
+                            <img src="gallery/14-tile-prep.jpg" alt="Completed renovation">
+                        </div>
+                    </div>
+                    <div class="ba-content">
+                        <div class="ba-icon">🏗️</div>
+                        <h3>Complete Renovation</h3>
+                        <div class="ba-service">HANDYMAN & TILE WORK</div>
+                        <p class="ba-description">Full bathroom renovation including tile installation, fixtures, and finishing touches. Professional workmanship in every detail.</p>
+                        <div class="ba-result">✓ Transformed outdated bathroom into modern retreat</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Before/After CTA -->
+            <div class="section-cta">
+                <p style="color: var(--navy); font-size: 1.1rem; font-weight: 500; margin-bottom: 10px;">Impressed by our results? Let's start your transformation today!</p>
+                <a href="#contact" class="cta-button">Get Your Free Estimate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"SafeHands transformed my entire home setup! They helped with WiFi installation and fixed my dryer vent—plus they're actually friendly and explain everything. Best decision for my family!"</p>
+                    <p class="testimonial-author">– Maria R., Morris County, NJ</p>
+                    <p class="testimonial-rating">⭐⭐⭐⭐⭐ (5 Stars)</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"As a senior living alone, I was intimidated by smart home tech. Michael and his team made it so easy! I can now control my lights and check my security cameras on my phone. Such a relief."</p>
+                    <p class="testimonial-author">– Robert T., Somerset County, NJ</p>
+                    <p class="testimonial-rating">⭐⭐⭐⭐⭐ (5 Stars)</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"Fixed my overgrown yard and installed smart lighting all in one weekend! Perfect for us busy professionals. They're reliable, professional, and actually finished on time. Highly recommend!"</p>
+                    <p class="testimonial-author">– Jennifer & David L., Union County, NJ</p>
+                    <p class="testimonial-rating">⭐⭐⭐⭐⭐ (5 Stars)</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"My dryer hasn't worked properly in months. SafeHands cleaned the vents, fixed it, and explained what to watch for. Now it works great and uses less electricity. Worth every penny!"</p>
+                    <p class="testimonial-author">– Patricia K., Morris County, NJ</p>
+                    <p class="testimonial-rating">⭐⭐⭐⭐⭐ (5 Stars)</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"Honest, knowledgeable, and fair pricing. They could've sold me expensive fixes, but instead found the real problem. I've already referred them to 3 neighbors. This is the handyman I've been looking for!"</p>
+                    <p class="testimonial-author">– James M., Somerset County, NJ</p>
+                    <p class="testimonial-rating">⭐⭐⭐⭐⭐ (5 Stars)</p>
+                </div>
+            </div>
+
+            <!-- Testimonials CTA -->
+            <div class="section-cta">
+                <p style="color: var(--navy); font-size: 1.1rem; font-weight: 500; margin-bottom: 10px;">Join hundreds of satisfied customers. Get your free estimate today!</p>
+                <a href="#contact" class="cta-button">Get Your Free Estimate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specials Section -->
+    <section class="specials" id="specials">
+        <div class="container">
+            <h2>⭐ Limited-Time Specials & Promotions</h2>
+            <div class="specials-grid">
+                <!-- Special 1: Seniors Package -->
+                <div class="special-offer">
+                    <span class="special-badge">SENIORS SPECIAL</span>
+                    <h3>Smart Home for Seniors</h3>
+                    <div class="niche-highlight">
+                        Easy tech setup + safety checks for Morris & Somerset County seniors
+                    </div>
+                    <ul>
+                        <li>Smart lock + door sensor installation</li>
+                        <li>WiFi setup with large-button controls</li>
+                        <li>Security camera system</li>
+                        <li>Follow-up tech support (6 months)</li>
+                    </ul>
+                    <div class="special-price">$449</div>
+                    <p style="color: #666; font-size: 0.9rem; margin: 10px 0;">Usually $600+ | Save $150+</p>
+                    <a href="#contact" class="special-cta">Get This Deal</a>
+                </div>
+
+                <!-- Special 2: Weekend Warriors -->
+                <div class="special-offer">
+                    <span class="special-badge">BUSY PROFESSIONALS</span>
+                    <h3>Weekend Warriors Bundle</h3>
+                    <div class="niche-highlight">
+                        Fast, efficient solutions for your weekend projects
+                    </div>
+                    <ul>
+                        <li>Yard cleanup or lawn maintenance</li>
+                        <li>Up to 5 minor home repairs</li>
+                        <li>Quick tech fixes included</li>
+                        <li>Saturday morning availability</li>
+                    </ul>
+                    <div class="special-price">$399</div>
+                    <p style="color: #666; font-size: 0.9rem; margin: 10px 0;">Usually $500+ | Save $100+</p>
+                    <a href="#contact" class="special-cta">Book Now</a>
+                </div>
+
+                <!-- Special 3: Eco Bundle -->
+                <div class="special-offer">
+                    <span class="special-badge">ECO-FRIENDLY</span>
+                    <h3>Green Home Sustainability</h3>
+                    <div class="niche-highlight">
+                        Energy-efficient repairs + green solutions for Union County
+                    </div>
+                    <ul>
+                        <li>Energy-efficient dryer vent cleaning</li>
+                        <li>Green yard care consultation</li>
+                        <li>LED lighting upgrade</li>
+                        <li>Water conservation tips included</li>
+                    </ul>
+                    <div class="special-price">$479</div>
+                    <p style="color: #666; font-size: 0.9rem; margin: 10px 0;">Usually $625+ | Save $150+</p>
+                    <a href="#contact" class="special-cta">Start Green Today</a>
+                </div>
+
+                <!-- Special 4: Smart Home Starter -->
+                <div class="special-offer">
+                    <span class="special-badge">NEW MOVERS</span>
+                    <h3>Smart Home Starter Kit</h3>
+                    <div class="niche-highlight">
+                        Complete smart home setup for new homeowners
+                    </div>
+                    <ul>
+                        <li>Smart lock installation</li>
+                        <li>WiFi network setup & optimization</li>
+                        <li>Smart thermostat installation</li>
+                        <li>Training on all systems</li>
+                    </ul>
+                    <div class="special-price">$499</div>
+                    <p style="color: #666; font-size: 0.9rem; margin: 10px 0;">Usually $650+ | Save $150+</p>
+                    <a href="#contact" class="special-cta">Claim Offer</a>
+                </div>
+
+                <!-- Special 5: Free Consultation -->
+                <div class="special-offer">
+                    <span class="special-badge">LIMITED TIME</span>
+                    <h3>Free Home Assessment</h3>
+                    <div class="niche-highlight">
+                        Comprehensive 30-minute consultation - No cost, no obligation
+                    </div>
+                    <ul>
+                        <li>Full home evaluation</li>
+                        <li>Tech & safety assessment</li>
+                        <li>Customized recommendations</li>
+                        <li>No-pressure quote</li>
+                    </ul>
+                    <div class="special-price">FREE</div>
+                    <p style="color: #666; font-size: 0.9rem; margin: 10px 0;">Value: $150 | Usually limited offer</p>
+                    <a href="#contact" class="special-cta">Schedule Yours</a>
+                </div>
+
+                <!-- Special 6: Referral Bonus -->
+                <div class="special-offer">
+                    <span class="special-badge">EARN REWARDS</span>
+                    <h3>Refer a Friend</h3>
+                    <div class="niche-highlight">
+                        Get $50 credit for each friend who becomes a customer
+                    </div>
+                    <ul>
+                        <li>$50 credit per successful referral</li>
+                        <li>No limit on referrals</li>
+                        <li>Instant account credit</li>
+                        <li>Friend gets $50 off too!</li>
+                    </ul>
+                    <div class="special-price">$50</div>
+                    <p style="color: #666; font-size: 0.9rem; margin: 10px 0;">Per referral | Unlimited earning</p>
+                    <a href="#contact" class="special-cta">Refer Now</a>
                 </div>
             </div>
         </div>

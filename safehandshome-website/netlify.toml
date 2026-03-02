@@ -1,0 +1,22 @@
+# Netlify Configuration
+
+# Form Settings
+[build]
+  command = "echo 'Static site - no build needed'"
+  publish = "."
+
+# Form Notifications - Email configuration
+[[redirects]]
+  from = "/contact"
+  to = "/"
+  status = 200
+
+# Context for production
+[context.production]
+  environment = { SITE_NAME = "SafeHands Home & Tech Repair" }
+
+# Redirect form success page
+[[redirects]]
+  from = "/success"
+  to = "/"
+  status = 200
