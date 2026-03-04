@@ -5,6 +5,12 @@
   command = "echo 'Static site - no build needed'"
   publish = "."
 
+# Ensure blog post serves correctly
+[[redirects]]
+  from = "/power-washing-blog.html"
+  to = "/power-washing-blog.html"
+  status = 200
+
 # Form Notifications - Email configuration
 [[redirects]]
   from = "/contact"
