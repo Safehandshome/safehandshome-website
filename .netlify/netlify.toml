@@ -4,10 +4,6 @@ redirectsOrigin = "config"
 plugins = []
 headers = []
 
-[functions]
-
-[functions."*"]
-
 [build]
 publish = "/home/clawbotpi/sites/safehandshome-website"
 publishOrigin = "config"
@@ -29,6 +25,10 @@ SITE_NAME = "SafeHands Home & Tech Repair"
 [build.processing.js]
 
 [build.services]
+
+[functions]
+
+[functions."*"]
 
 [[redirects]]
 from = "/power-washing-blog.html"
